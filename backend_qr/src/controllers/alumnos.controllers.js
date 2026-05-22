@@ -4,11 +4,17 @@ export const obtenerAlumnos = async (req, res) => {
     try{
 const alumnos = await prisma.alumno.findMany();
 
-        return 
+        return res.json ({
+            success: true,
+data: alumnos
+       });
 
     }catch(error){
 
-        return 
+        return res.json ({
+            success: false,
+            message: "Error al obtener los alumnos"
+        });
 
 }
 }

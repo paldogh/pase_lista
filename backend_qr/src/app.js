@@ -12,7 +12,9 @@ app.get("/", (req, res) => {
   });
 });
 
+//ruta para el login
 app.use("/api", loginRoutes);
+//ruta para cosultar los alumnos
 app.use('/alumnos', alumnosRoutes);
 
 export default app;
