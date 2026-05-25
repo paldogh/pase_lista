@@ -1,11 +1,35 @@
-/* Configurar prisma para conectarnos a nuestra bd de posgres */
+import dotenv from 'dotenv';
 
-import { PrismaClient } from "@prisma/client";
-import {PrismaPg} from "@prisma/adapter-pg";
+dotenv.config();
 
-//conexión a la bd
-const  conectionString = process.env.DATABASE_URL;
-const adapter = new PrismaPg({conectionString});
-const prisma = new PrismaClient({adapter});
+import pg from 'pg';
+
+import { PrismaClient } from '@prisma/client';
+
+import { PrismaPg } from '@prisma/adapter-pg';
+
+const { Pool } = pg;
+
+const pool = new Pool({
+
+    user: 'postgres',
+
+    password: '1234',
+
+    host: 'localhost',
+
+    port: 5432,
+
+    database: 'pase_lista_qr'
+
+});
+
+const adapter = new PrismaPg(pool);
+
+const prisma = new PrismaClient({
+
+    adapter
+
+});
 
 export default prisma;

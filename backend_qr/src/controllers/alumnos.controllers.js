@@ -2,14 +2,21 @@ import prisma from '../config/prisma.js';
 
 export const obtenerAlumnos = async (req, res) => {
     try{
-const alumnos = await prisma.alumno.findMany();
+const alumnos = await prisma.alumno.findMany({
+
+include:{
+    grupo: true,
+    tutor: true
+} });
 
         return res.json ({
             success: true,
-data: alumnos
+message: "Alumnos obtenidos correctamente",
+            data: alumnos
        });
 
     }catch(error){
+    console.log(error);
 
         return res.json ({
             success: false,

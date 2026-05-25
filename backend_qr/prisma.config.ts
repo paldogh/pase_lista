@@ -1,23 +1,21 @@
-import "dotenv/config";
+import 'dotenv/config';
 
-import { defineConfig, env } from "prisma/config";
+import { PrismaClient } from '@prisma/client';
+import { PrismaPg } from '@prisma/adapter-pg';
+import pkg from 'pg';
 
-export default defineConfig({
+const { Pool } = pkg;
 
-  schema: "prisma/schema.prisma",
+const connectionString = process.env.DATABASE_URL;
 
-  migrations: {
-
-    path: "prisma/migrations",
-
-    seed: "node prisma/seed.js"
-
-  },
-
-  datasource: {
-
-    url: env("DATABASE_URL")
-
-  }
-
+const pool = new Pool({
+  connectionString,
 });
+
+const adapter = new PrismaPg(pool);
+
+const prisma = new PrismaClient({
+  adapter,
+});
+
+export default prisma;

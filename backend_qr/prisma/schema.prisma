@@ -4,7 +4,8 @@ generator client {
 
 datasource db {
   provider = "postgresql"
- 
+   url      = env("DATABASE_URL")
+
 }
 
 enum Rol {
@@ -180,3 +181,6 @@ model Log {
   usuarioId         String
   usuario           Usuario @relation(fields: [usuarioId], references: [id])
 }
+
+
+
