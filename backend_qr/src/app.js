@@ -2,6 +2,7 @@ import express from "express";
 import loginRoutes from "./routes/login.routes.js";
 import alumnosRoutes from './routes/alumnos.routes.js';
 import materiaRoutes from "./routes/materias.routes.js";
+import statsRoutes from "./routes/stats.routes.js";
 
 const app = express();
 
@@ -19,5 +20,6 @@ app.use("/api", loginRoutes);
 app.use('/alumnos', alumnosRoutes);
 //ruta para materias
 app.use("/api", materiaRoutes);
+app.use("/api/stats", statsRoutes);
 
 export default app;
