@@ -1,5 +1,4 @@
 //escribe aquí tu nomre:
  
-const aldo="aldo";
+const name="name";
 
-const example355="example333";
