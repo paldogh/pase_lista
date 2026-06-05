@@ -1,5 +1,5 @@
 //escribe aquí tu nomre:
  
-const aldoexample="aldoexample";
+const aldoexample26="aldoexample26";
 
 
