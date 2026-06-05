@@ -1,4 +1,4 @@
 //escribe aquí tu nomre:
  
-const aldo;
+const aldo="aldo";
 
