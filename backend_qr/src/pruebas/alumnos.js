@@ -2,4 +2,5 @@
  
 const aldoexample="aldoexample";
 
+const yarikexample="yarikexample";
 
