@@ -1,3 +1,5 @@
+//este archivo lo compartimos entre todos, revisa bien antes de actualizar
+
 import express from "express";
 import loginRoutes from "./routes/login.routes.js";
 import alumnosRoutes from './routes/alumnos.routes.js';
