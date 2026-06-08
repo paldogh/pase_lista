@@ -1,5 +1,5 @@
 //escribe aquí tu nomre:
  
-const jorgeexample="jorgeexample";
+const jorgeexample1="jorgeexample";
 
 const jorgeexample="jorgexample";
